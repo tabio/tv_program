@@ -11,7 +11,7 @@ class Keyword
 
   def initialize(queries = [], ignores = [])
     @query   = Array(queries).join(' ').gsub(' ', '+')
-    @ignores = Array(ignores)
+    @ignores = Array(ignores).reject(&:empty?)
   end
 
   class << self
